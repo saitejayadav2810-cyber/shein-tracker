@@ -81,14 +81,9 @@ def scrape_products():
 
     with sync_playwright() as p:
 
-        browser = p.chromium.launch(
-            headless=True,
-            args=[
-                "--disable-blink-features=AutomationControlled",
-                "--no-sandbox",
-                "--disable-dev-shm-usage"
-            ]
-        )
+        browser = p.firefox.launch(
+    headless=True
+)
 
         page = browser.new_page(
             user_agent=(
